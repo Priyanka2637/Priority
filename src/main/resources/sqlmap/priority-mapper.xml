@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.ordermgt.db.mapper.PriorityMapper">
+
+	<resultMap id="priorityArea" type="com.project.ordermgt.priorityProject.data.PriorityAreas">
+		<result property="areaId" column="AREA_ID" />
+		<result property="areaName" column="AREA_NAME" />
+	</resultMap>
+
+	<select id="getAllPriorityArea" resultMap="priorityArea">
+		SELECT AREA_ID, AREA_NAME FROM AREA		
+	</select>
+	
+	<insert id="insertInRatingDB" parameterType="java.util.Map">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+			select AREA_ID as id FROM AREA where AREA_NAME = #{area}
+		</selectKey>
+		insert into RATING( 
+			USER_ID,       
+			AREA_ID,  
+			PRIORITY,  
+			SATISFATION
+        )
+        values (
+        	#{userId},
+        	#{id},
+			#{priorityValue},
+			#{satisfactionRating}
+        )
+    </insert>
+	
+
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- Make sure the bean ID is unique -->
+    <bean id="ocBeanFact"
+        class="org.springframework.context.support.ClassPathXmlApplicationContext">
+        <constructor-arg>
+            <list>
+                <value>spring/backOfficeAutomationDataSource-spring.xml</value>
+                <value>spring/priority-spring.xml</value>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
+

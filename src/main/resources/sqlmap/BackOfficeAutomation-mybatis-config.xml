@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>  
+	<settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="logImpl" value="COMMONS_LOGGING" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+        <setting name="lazyLoadingEnabled" value="true" /> 
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+        <setting name="aggressiveLazyLoading" value="false" />
+    </settings>
+	
+	<mappers>
+		<mapper resource="sqlmap/priority-mapper.xml" />		
+	</mappers>
+	
+</configuration>
